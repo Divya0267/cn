@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main() {
+    int f, N;
+    printf("Enter the no. of bits for the sequence no.: ");
+    scanf("%d", &N);
+    f = pow(2, N - 1);
+    for (int j = 0; j < f; j++) {
+        printf("\nSENDER: Frame %d is sent", j);
+    }
+    for (int i = 0; i < f; i++) {
+        printf("\n");
+        int flag = rand() % 2;
+        if (!flag)
+            printf("RECEIVER: Frame %d received correctly\n(acknowledgment %d received)\n", i, i);
+        else {
+            printf("RECEIVER: Frame %d received correctly\n(acknowledgment %d lost)\n", i, i);
+            printf("(Sender timeouts --> Resend the frame)\n");
+        }
+    }
+    printf("\nWant to continue");
+    return 0;
+}
+
+
+OUTPUT-
+Enter the no. of bits for the sequence no.: 4
+
+SENDER: Frame 0 is sent
+SENDER: Frame 1 is sent
+SENDER: Frame 2 is sent
+SENDER: Frame 3 is sent
+SENDER: Frame 4 is sent
+SENDER: Frame 5 is sent
+SENDER: Frame 6 is sent
+SENDER: Frame 7 is sent
+RECEIVER: Frame 0 received correctly
+(acknowledgment 0 lost)
+(Sender timeouts --> Resend the frame)
+
+RECEIVER: Frame 1 received correctly
+(acknowledgment 1 received)
+
+RECEIVER: Frame 2 received correctly
+(acknowledgment 2 lost)
+(Sender timeouts --> Resend the frame)
+
+RECEIVER: Frame 3 received correctly
+(acknowledgment 3 lost)
+(Sender timeouts --> Resend the frame)
+
+RECEIVER: Frame 4 received correctly
+(acknowledgment 4 lost)
+(Sender timeouts --> Resend the frame)
+
+RECEIVER: Frame 5 received correctly
+(acknowledgment 5 lost)
+(Sender timeouts --> Resend the frame)
+
+RECEIVER: Frame 6 received correctly
+(acknowledgment 6 received)
+
+RECEIVER: Frame 7 received correctly
+(acknowledgment 7 received)
+
+Want to continue
