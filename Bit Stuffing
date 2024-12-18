@@ -35,3 +35,20 @@ void main() {
         printf("%d", b[i]);
     getchar();
 }
+
+OUTPUT-
+Enter frame length:10                                                                                                                           
+Enter input frame (0's & 1's only):1                                                                                                            
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1                                                                                                                                               
+1    
+
+OUTPUT:
+
+After stuffing the frame is:11111011111 
